@@ -9,7 +9,7 @@ namespace WorldBuilding.Pickups
         [SerializeField]
         float energyPoints;
 
-        public override void ApplyPickup(Cat cat)
+        protected override void ApplyPickup(Cat cat)
         {
             cat.ChangeEnergy(energyPoints);
         }

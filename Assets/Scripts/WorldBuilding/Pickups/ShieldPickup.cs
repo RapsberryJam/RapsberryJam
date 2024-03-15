@@ -9,7 +9,7 @@ namespace WorldBuilding.Pickups
         [SerializeField]
         float shieldPoints;
 
-        public override void ApplyPickup(Cat cat)
+        protected override void ApplyPickup(Cat cat)
         {
             cat.ChangeShield(shieldPoints);
         }

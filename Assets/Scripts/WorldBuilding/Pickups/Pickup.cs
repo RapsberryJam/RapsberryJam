@@ -13,14 +13,16 @@ namespace WorldBuilding.Pickups
         List<ParticleSystem> effects = new List<ParticleSystem>();
         [SerializeField]
         GameObject pickupView;
+        [SerializeField]
+        float animationDuration = 0.5f;
 
-        public abstract void ApplyPickup(Cat cat);
+        protected abstract void ApplyPickup(Cat cat);
 
         bool pickupUsed;
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent<Cat>(out Cat cat) && !pickupUsed)
+            if (other.TryGetComponent<Cat>(out Cat cat) && !pickupUsed && cat.IsAlive)
             {
                 pickupUsed = true;
                 ApplyPickup(cat);
@@ -28,7 +30,7 @@ namespace WorldBuilding.Pickups
                 foreach (ParticleSystem particles in effects)
                     particles.Play();
 
-                pickupView.transform.DOScale(Vector3.zero, 0.5f);
+                pickupView.transform.DOScale(Vector3.zero, animationDuration);
             }
         }
     }

@@ -9,7 +9,7 @@ namespace WorldBuilding.Pickups
         [SerializeField]
         float rapsberryPoints;
 
-        public override void ApplyPickup(Cat cat)
+        protected override void ApplyPickup(Cat cat)
         {
         }
     }

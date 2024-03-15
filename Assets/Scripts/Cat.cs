@@ -10,6 +10,7 @@ public class Cat : MonoBehaviour
     [SerializeField]
     float InitialShield;
 
+    public bool IsAlive => shield > 0 && energy > 0;
     public float EnergyNormalized => energy / InitialEnergy;
     public float ShieldNormalized => shield / InitialShield;
 

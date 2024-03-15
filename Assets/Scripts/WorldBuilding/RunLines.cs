@@ -20,12 +20,16 @@ namespace WorldBuilding
         bool switchingAvailable;
         int currentLineIndex;
         int maxLineIndex;
+        Tweener currentTween;
 
         void Awake()
         {
             maxLineIndex = linePositions.Count - 1;
             currentLineIndex = linePositions.Count / 2;
             switchingAvailable = true;
+
+            cat.ShieldBroken += OnCatDead;
+            cat.CatExchausted += OnCatDead;
         }
 
         public void SwitchLine(Direction direction)
@@ -36,11 +40,14 @@ namespace WorldBuilding
 
             if (CanSwitchLine(newLineIndex))
             {
+                Vector3 deltaMoveX = new Vector3(linePositions[newLineIndex].position.x - linePositions[currentLineIndex].position.x, 0, 0);
                 currentLineIndex = newLineIndex;
                 switchLineInProgress = true;
-                cat.transform.DOMove(linePositions[newLineIndex].position, switchingLineDuration)
-                    .SetEase(Ease.InQuint)
-                    .onComplete += () => switchLineInProgress = false;
+
+                currentTween = cat.transform.DOBlendableMoveBy(deltaMoveX, switchingLineDuration)
+                    .SetEase(Ease.InQuint);
+
+                currentTween.onComplete += () => switchLineInProgress = false;
             }
         }
 
@@ -48,7 +55,12 @@ namespace WorldBuilding
         {
             bool newIndexValid = newIndex >= 0 && newIndex <= maxLineIndex;
 
-            return !switchLineInProgress && newIndexValid;
+            return !switchLineInProgress && newIndexValid && cat.IsAlive;
+        }
+
+        void OnCatDead()
+        {
+            currentTween.Kill();
         }
     }
 }
