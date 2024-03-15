@@ -11,7 +11,7 @@ public class Cat : MonoBehaviour
     float InitialShield;
 
     public float EnergyNormalized => energy / InitialEnergy;
-    public float ShieldNotmalized => shield / InitialShield;
+    public float ShieldNormalized => shield / InitialShield;
 
     public Action CatExchausted;
     public Action ShieldBroken;
