@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
@@ -42,5 +43,16 @@ public class Cat : MonoBehaviour
             ShieldBroken?.Invoke();
     }
 
+    public void Jump(float height)
+    {
+       Sequence jumpSequence = DOTween.Sequence();
 
+        Vector3 jumpDeltaY = new Vector3(0, height, 0);
+
+        jumpSequence.Append(transform.DOBlendableMoveBy(jumpDeltaY, 0.5f).SetEase(Ease.InCubic))
+            .Append(transform.DOBlendableMoveBy(-jumpDeltaY, 0.5f).SetEase(Ease.OutCubic))
+            .Append(transform.DOPunchScale(0.25f * Vector3.one, 5));
+
+        jumpSequence.Play();
+    }
 }
