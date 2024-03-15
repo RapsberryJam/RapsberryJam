@@ -28,15 +28,12 @@ namespace WorldBuilding
             ConnectChunk(worldStartPoint, firstChunk);
 
             for (int i = 1; i < desiredChunkCount; i++)
-            {
-                var newChunk = GetRandomChunk();
-                ConnectChunk(activeChunks.Last().EndConnectionPoint, newChunk);
-            }
+                AddNewChunk();
         }
 
         private Chunk GetRandomChunk()
         {
-            return Instantiate(ChunkLibrary[Random.Range(0, ChunkLibrary.Count)], transform);
+            return Instantiate(ChunkLibrary[Random.Range(0, ChunkLibrary.Count)], worldStartPoint);
         }
 
         private void ConnectChunk(Transform connectionPoint, Chunk chunkToConnect)
@@ -47,6 +44,19 @@ namespace WorldBuilding
             chunkToConnect.transform.position += offset;
 
             activeChunks.Add(chunkToConnect);
+        }
+
+        public void AddNewChunk()
+        {
+            var newChunk = GetRandomChunk();
+            ConnectChunk(activeChunks.Last().EndConnectionPoint, newChunk);
+        }
+
+        public void RemoveFirstChunk()
+        {
+            var firstChunk = activeChunks.First();
+            activeChunks.Remove(firstChunk);
+            Destroy(firstChunk.gameObject);
         }
     }
 }

@@ -1,18 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldRunner : MonoBehaviour
+namespace WorldBuilding
 {
-    // Start is called before the first frame update
-    void Start()
+    public class WorldRunner : MonoBehaviour
     {
-        
-    }
+        [field: SerializeField]
+        public float WorldSpeed { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField]
+        WorldBuilder worldBuilder;
+        [SerializeField]
+        Transform worldContainer;
+
+        bool isRunning = false;
+
+        void Start()
+        {
+            isRunning = true;
+        }
+
+        void Update()
+        {
+            if (isRunning)
+                worldContainer.position -= new Vector3(0, 0, WorldSpeed * Time.deltaTime);
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.GetComponent<Chunk>() != null)
+            {
+                worldBuilder.RemoveFirstChunk();
+                worldBuilder.AddNewChunk();
+            }
+        }
     }
 }
