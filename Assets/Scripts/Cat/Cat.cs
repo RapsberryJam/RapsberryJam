@@ -61,6 +61,7 @@ public class Cat : MonoBehaviour
             ShieldBroken?.Invoke();
             ball.SetActive(false);
             shatteredBall.SetActive(true);
+            animator.PlayFall();
         }
     }
 

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     List<SpeedDesc> speedRanges = new List<SpeedDesc>();
 
     int nextSpeedRangeIndex = 0;
+    int playerScore;
     float gameTimer;
     float energySinkModifier = 1f;
     SpeedDesc nextSpeedRange;
@@ -43,10 +44,14 @@ public class GameManager : MonoBehaviour
         CheckSpeedRange();
 
         if (cat.IsAlive)
-            cat.ChangeEnergy(- energySinkSpeed * energySinkModifier * Time.deltaTime);    
+            cat.ChangeEnergy(- energySinkSpeed * energySinkModifier * Time.deltaTime);
     }
 
-    private void CheckSpeedRange()
+    public void AddScore(int points) => playerScore += points;
+
+    public int PlayerScore => playerScore;
+
+    void CheckSpeedRange()
     {
         if (nextSpeedRange != null && nextSpeedRange.StartSecond <= gameTimer)
         {
@@ -59,7 +64,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetGameSpeed(float speedModifier)
+    void SetGameSpeed(float speedModifier)
     {
         energySinkModifier = speedModifier;
         worldRunner.SetSpeed(speedModifier);
