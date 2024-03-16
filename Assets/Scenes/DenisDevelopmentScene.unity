@@ -1035,9 +1035,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: desiredChunkCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: ChunkLibrary.Array.data[0]
       value: 
-      objectReference: {fileID: 1603969225}
+      objectReference: {fileID: 7541322483548497100, guid: ce955d7e375a10c41a97d5bc7c139f9b, type: 3}
+    - target: {fileID: 4263498301515430568, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -188.9
+      objectReference: {fileID: 0}
     - target: {fileID: 4263498301799051146, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: m_Name
       value: GameLogic
@@ -1092,7 +1100,7 @@ PrefabInstance:
       objectReference: {fileID: 899502249}
     - target: {fileID: 4263498301799051148, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: energySinkSpeed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4263498301988105671, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: cat
