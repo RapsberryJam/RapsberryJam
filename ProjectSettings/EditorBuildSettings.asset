@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartupScene.unity
+    guid: c0b4c5c971026d540b4afbcd69073933
+  - enabled: 1
+    path: Assets/Scenes/DenisDevelopmentScene.unity
+    guid: 7bcce9180a319054fa35f0f7cb1d9d07
   m_configObjects: {}
