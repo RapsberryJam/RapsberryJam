@@ -2,8 +2,10 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 namespace UI
@@ -13,6 +15,8 @@ namespace UI
         [SerializeField]
         Cat cat;
         [SerializeField]
+        GameManager manager;
+        [SerializeField]
         Bar energyBar;
         [SerializeField]
         Bar shieldBar;
@@ -20,6 +24,10 @@ namespace UI
         GameObject gameOverScreen;
         [SerializeField]
         Button restartButton;
+        [SerializeField]
+        TextMeshProUGUI playerScore;
+        [SerializeField]
+        TextMeshProUGUI playerScoreResult;
         [SerializeField]
         Transform bottomAnchor;
 
@@ -31,6 +39,7 @@ namespace UI
 
         void Update()
         {
+            playerScore.text = manager.PlayerScore.ToString();
             energyBar.UpdateValue(cat.EnergyNormalized);
             shieldBar.UpdateValue(cat.ShieldNormalized);
         }
@@ -38,6 +47,7 @@ namespace UI
         void OnGameOver()
         {
             gameOverScreen.SetActive(true);
+            playerScoreResult.text = $"Score: {manager.PlayerScore}";
             restartButton.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single));
 
             gameOverScreen.transform.DOMoveY(bottomAnchor.position.y, 1.5f).SetDelay(1f).SetEase(Ease.OutBounce);

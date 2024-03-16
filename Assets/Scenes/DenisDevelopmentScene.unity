@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.57770085, g: 0.6152049, b: 0.60846514, a: 1}
+  m_IndirectSpecularColor: {r: 0.20390339, g: 0.3530442, b: 0.47370517, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -497,6 +497,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &490700234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4263498301799051148, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+  m_PrefabInstance: {fileID: 4263498300515757480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adc736399e324e40875110534240ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &703257446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1234,10 @@ PrefabInstance:
       propertyPath: cat
       value: 
       objectReference: {fileID: 899502249}
+    - target: {fileID: 7156615493424174734, guid: c822c3360b81e4d42806c14b15e039b7, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 490700234}
     - target: {fileID: 7156615493424174735, guid: c822c3360b81e4d42806c14b15e039b7, type: 3}
       propertyPath: m_Name
       value: UICanvas
