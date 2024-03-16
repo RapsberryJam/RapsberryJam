@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.5803922, g: 0.6862745, b: 0.8, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.006
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.57770085, g: 0.6152049, b: 0.60846514, a: 1}
+  m_IndirectSpecularColor: {r: 0.20390339, g: 0.3530442, b: 0.47370517, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1041,7 +1041,7 @@ PrefabInstance:
     - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: ChunkLibrary.Array.data[0]
       value: 
-      objectReference: {fileID: 7541322483548497100, guid: ce955d7e375a10c41a97d5bc7c139f9b, type: 3}
+      objectReference: {fileID: 7541322483548497100, guid: 16387d08e24d1014a9b0074851e621d3, type: 3}
     - target: {fileID: 4263498301515430568, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: m_LocalPosition.z
       value: -188.9

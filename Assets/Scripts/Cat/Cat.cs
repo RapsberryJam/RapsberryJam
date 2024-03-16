@@ -40,6 +40,9 @@ public class Cat : MonoBehaviour
     {
         energy = Mathf.Clamp(energy + delta,0,InitialEnergy);
 
+        if (Mathf.Abs(delta) > 1)
+            animator.PlayPunch();
+
         if (energy == 0)
         {
             CatExchausted?.Invoke();
@@ -51,7 +54,7 @@ public class Cat : MonoBehaviour
 
     public void ChangeShield(float delta)
     {
-        if (delta < 0)
+        if (delta != 0)
             animator.PlayPunch();
 
         shield = Mathf.Clamp(shield + delta, 0, InitialShield);
