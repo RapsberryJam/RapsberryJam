@@ -319,6 +319,22 @@ MonoBehaviour:
     SpeedModifier: 1.4
   - StartSecond: 150
     SpeedModifier: 1.5
+  - StartSecond: 180
+    SpeedModifier: 1.65
+  - StartSecond: 210
+    SpeedModifier: 1.8
+  - StartSecond: 240
+    SpeedModifier: 1.95
+  - StartSecond: 270
+    SpeedModifier: 2.05
+  - StartSecond: 300
+    SpeedModifier: 2.3
+  - StartSecond: 330
+    SpeedModifier: 2.55
+  - StartSecond: 360
+    SpeedModifier: 2.8
+  - StartSecond: 390
+    SpeedModifier: 3.05
 --- !u!114 &4263498301799051149
 MonoBehaviour:
   m_ObjectHideFlags: 0
