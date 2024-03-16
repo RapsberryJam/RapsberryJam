@@ -1039,9 +1039,29 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: ChunkLibrary.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: ChunkLibrary.Array.data[0]
       value: 
       objectReference: {fileID: 7541322483548497100, guid: 16387d08e24d1014a9b0074851e621d3, type: 3}
+    - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: ChunkLibrary.Array.data[1]
+      value: 
+      objectReference: {fileID: 7541322483548497100, guid: 916a1a9d1a2e59f4aa95ac43566a384b, type: 3}
+    - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: ChunkLibrary.Array.data[2]
+      value: 
+      objectReference: {fileID: 7541322483548497100, guid: f30b7f9e00b9bb34592d3c2ac9f16bdd, type: 3}
+    - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: ChunkLibrary.Array.data[3]
+      value: 
+      objectReference: {fileID: 7541322483548497100, guid: ca030461dad1c1943a432777c8bfedf0, type: 3}
+    - target: {fileID: 4263498301458396098, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: ChunkLibrary.Array.data[4]
+      value: 
+      objectReference: {fileID: 7541322483548497100, guid: f3323407dd6c32345ae5355ba5a8e9d4, type: 3}
     - target: {fileID: 4263498301515430568, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: m_LocalPosition.z
       value: -188.9
