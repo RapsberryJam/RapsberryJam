@@ -30,7 +30,8 @@ namespace WorldBuilding.Pickups
                 foreach (ParticleSystem particles in effects)
                     particles.Play();
 
-                pickupView.transform.DOScale(Vector3.zero, animationDuration);
+                if (pickupView != null)
+                    pickupView.transform.DOScale(Vector3.zero, animationDuration);
             }
         }
     }
