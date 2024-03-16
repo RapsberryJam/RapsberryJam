@@ -51,4 +51,9 @@ public class CatAnimator : MonoBehaviour
     {
         animator.speed = originalSpeed * speedModifier;
     }
+
+    public void PlayFall()
+    {
+        animator.SetTrigger("Fall");
+    }
 }

@@ -44,7 +44,8 @@ public class Cat : MonoBehaviour
         {
             CatExchausted?.Invoke();
             rigidBody.isKinematic = false;
-            rigidBody.AddForceAtPosition(10 * Vector3.forward, transform.position + UnityEngine.Random.insideUnitSphere, ForceMode.Impulse);
+            rigidBody.AddForceAtPosition(5 * Vector3.forward, transform.position + UnityEngine.Random.insideUnitSphere, ForceMode.Impulse);
+            animator.PlayFall();
         }
     }
 
