@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703652932374164904}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8745937, y: 0.537, z: 5.234944}
   m_LocalScale: {x: 1.6099, y: 1.6099, z: 1.6099}
   m_ConstrainProportionsScale: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   energyDamage: 0
   effects: []
   rigidBodies:
-  - {fileID: 5791390863654296998}
+  - {fileID: 2287280148457066100}
 --- !u!65 &5336893288148136411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4913593035941721330}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.309, z: 0}
+  m_LocalPosition: {x: 0, y: -0.564, z: 0}
   m_LocalScale: {x: 2.5998, y: 2.5998, z: 2.5998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162,7 +162,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

@@ -48,9 +48,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4883,7 +4883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9035f9fb251f0d43a345bafb0ebf31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: []
+  effects:
+  - {fileID: 5562221197293078874}
   pickupView: {fileID: 1474220397178442777}
   animationDuration: 0.5
   rapsberryPoints: 1
