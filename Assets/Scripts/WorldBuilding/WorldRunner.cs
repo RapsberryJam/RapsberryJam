@@ -18,6 +18,7 @@ namespace WorldBuilding
 
         bool isRunning;
         bool acceptSpeedUpdate;
+        float worldSpeedModifier = 1f;
 
         void Start()
         {
@@ -33,16 +34,16 @@ namespace WorldBuilding
                 .onComplete += () => isRunning = false;
         }
 
-        public void SetSpeed(float newSpeed)
+        public void SetSpeed(float speedModifier)
         {
             if (acceptSpeedUpdate)
-                WorldSpeed = newSpeed;
+                worldSpeedModifier = speedModifier;
         }
 
         void Update()
         {
             if (isRunning)
-                worldContainer.position -= new Vector3(0, 0, WorldSpeed * Time.deltaTime);
+                worldContainer.position -= new Vector3(0, 0, WorldSpeed * worldSpeedModifier * Time.deltaTime);
         }
 
         //If chunk moves to trigger - it is time to rebuild chunks

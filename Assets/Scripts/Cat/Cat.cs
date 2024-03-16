@@ -10,6 +10,12 @@ public class Cat : MonoBehaviour
     float InitialEnergy;
     [SerializeField]
     float InitialShield;
+    [SerializeField]
+    CatAnimator animator;
+    [SerializeField]
+    GameObject ball;
+    [SerializeField]
+    GameObject shatteredBall;
 
     public bool IsAlive => shield > 0 && energy > 0;
     public float EnergyNormalized => energy / InitialEnergy;
@@ -20,11 +26,14 @@ public class Cat : MonoBehaviour
 
     float energy;
     float shield;
+    Rigidbody rigidBody;
 
     void Awake()
     {
         shield = InitialShield;
         energy = InitialEnergy;
+        rigidBody = GetComponent<Rigidbody>();
+        rigidBody.centerOfMass = Vector3.down;
     }
 
     public void ChangeEnergy(float delta)
@@ -32,27 +41,35 @@ public class Cat : MonoBehaviour
         energy = Mathf.Clamp(energy + delta,0,InitialEnergy);
 
         if (energy == 0)
+        {
             CatExchausted?.Invoke();
+            rigidBody.isKinematic = false;
+            rigidBody.AddForceAtPosition(10 * Vector3.forward, transform.position + UnityEngine.Random.insideUnitSphere, ForceMode.Impulse);
+        }
     }
 
     public void ChangeShield(float delta)
     {
+        if (delta < 0)
+            animator.PlayPunch();
+
         shield = Mathf.Clamp(shield + delta, 0, InitialShield);
 
-        if(shield == 0)
+        if (shield == 0)
+        {
             ShieldBroken?.Invoke();
+            ball.SetActive(false);
+            shatteredBall.SetActive(true);
+        }
     }
 
     public void Jump(float height)
     {
-       Sequence jumpSequence = DOTween.Sequence();
+        animator.PlayJump(height);
+    }
 
-        Vector3 jumpDeltaY = new Vector3(0, height, 0);
-
-        jumpSequence.Append(transform.DOBlendableMoveBy(jumpDeltaY, 0.5f).SetEase(Ease.InCubic))
-            .Append(transform.DOBlendableMoveBy(-jumpDeltaY, 0.5f).SetEase(Ease.OutCubic))
-            .Append(transform.DOPunchScale(0.25f * Vector3.one, 5));
-
-        jumpSequence.Play();
+    public void SetAnimationSpeed(float speedModifier)
+    {
+        animator.SetSpeedModifier(speedModifier);
     }
 }
