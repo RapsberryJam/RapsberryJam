@@ -18,6 +18,7 @@ namespace UI
 
         public void UpdateValue(float newValue)
         {
+            newValue = Mathf.Clamp(newValue, 0.01f, 1f);
             if (newValue == lastValue)
                 return;
 

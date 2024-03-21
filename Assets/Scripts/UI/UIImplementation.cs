@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 namespace UI
@@ -42,6 +41,7 @@ namespace UI
             playerScore.text = manager.PlayerScore.ToString();
             energyBar.UpdateValue(cat.EnergyNormalized);
             shieldBar.UpdateValue(cat.ShieldNormalized);
+            Debug.LogWarning(cat.ShieldNormalized);
         }
 
         void OnGameOver()

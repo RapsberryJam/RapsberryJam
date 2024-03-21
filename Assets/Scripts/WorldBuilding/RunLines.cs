@@ -44,8 +44,7 @@ namespace WorldBuilding
                 currentLineIndex = newLineIndex;
                 switchLineInProgress = true;
 
-                currentTween = cat.transform.DOBlendableMoveBy(deltaMoveX, switchingLineDuration)
-                    .SetEase(Ease.InQuint);
+                currentTween = cat.transform.DOBlendableMoveBy(deltaMoveX, switchingLineDuration);
 
                 currentTween.onComplete += () => switchLineInProgress = false;
             }

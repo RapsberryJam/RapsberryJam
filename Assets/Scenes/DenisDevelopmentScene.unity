@@ -1131,12 +1131,16 @@ PrefabInstance:
       objectReference: {fileID: 899502249}
     - target: {fileID: 4263498301799051148, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: energySinkSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4263498301988105671, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
       propertyPath: cat
       value: 
       objectReference: {fileID: 899502249}
+    - target: {fileID: 4263498301988105671, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
+      propertyPath: switchingLineDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32371bb09ee9859458ac41eb0b36e7fd, type: 3}
 --- !u!1001 &7156615493018323911
